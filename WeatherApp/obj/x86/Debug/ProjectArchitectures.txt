@@ -1,0 +1,1 @@
+C:\Users\dmitr\OneDrive\Документы\Visual Studio 2017\Projects\ByshovetsDmytro_s_WeatherApp\WeatherApp\WeatherApp.csproj;x86

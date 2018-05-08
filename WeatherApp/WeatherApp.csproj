@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{33602EAB-40FA-4F4D-89AF-BFD7096B59CD}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WeatherApp</RootNamespace>
+    <AssemblyName>WeatherApp</AssemblyName>
+    <DefaultLanguage>ru-RU</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.16299.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <PackageCertificateKeyFile>WeatherApp_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\AllWeather.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\AnimParts.cs" />
+    <Compile Include="src\Astro.cs" />
+    <Compile Include="src\Cloud.cs" />
+    <Compile Include="src\Clouds.cs" />
+    <Compile Include="src\Condition.cs" />
+    <Compile Include="src\Day.cs" />
+    <Compile Include="src\ForecastDay.cs" />
+    <Compile Include="src\ForecastWeather.cs" />
+    <Compile Include="src\Loacation.cs" />
+    <Compile Include="pages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\CurrentWeather.cs" />
+    <Compile Include="src\Moon.cs" />
+    <Compile Include="src\Precipitation.cs" />
+    <Compile Include="src\SelectedForecastDay.cs" />
+    <Compile Include="src\settingsParametrs.cs" />
+    <Compile Include="src\Sun.cs" />
+    <Compile Include="src\WeatherAPI.cs" />
+    <Compile Include="pages\WheatherPage.xaml.cs">
+      <DependentUpon>WheatherPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="Assets\weather\night\Thumbs.db" />
+    <None Include="WeatherApp_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\icons\drop-of-rain.png" />
+    <Content Include="Assets\icons\icons8-atmospheric-pressure-100.png" />
+    <Content Include="Assets\icons\Moon.png" />
+    <Content Include="Assets\icons\Sun.png" />
+    <Content Include="Assets\icons\themometer-with-low-temperature.png" />
+    <Content Include="Assets\icons\visibility-button.png" />
+    <Content Include="Assets\icons\wind.png" />
+    <Content Include="Assets\weather\day\113.png" />
+    <Content Include="Assets\weather\day\116.png" />
+    <Content Include="Assets\weather\day\119.png" />
+    <Content Include="Assets\weather\day\122.png" />
+    <Content Include="Assets\weather\day\143.png" />
+    <Content Include="Assets\weather\day\176.png" />
+    <Content Include="Assets\weather\day\179.png" />
+    <Content Include="Assets\weather\day\182.png" />
+    <Content Include="Assets\weather\day\185.png" />
+    <Content Include="Assets\weather\day\200.png" />
+    <Content Include="Assets\weather\day\227.png" />
+    <Content Include="Assets\weather\day\230.png" />
+    <Content Include="Assets\weather\day\248.png" />
+    <Content Include="Assets\weather\day\260.png" />
+    <Content Include="Assets\weather\day\263.png" />
+    <Content Include="Assets\weather\day\266.png" />
+    <Content Include="Assets\weather\day\281.png" />
+    <Content Include="Assets\weather\day\284.png" />
+    <Content Include="Assets\weather\day\293.png" />
+    <Content Include="Assets\weather\day\296.png" />
+    <Content Include="Assets\weather\day\299.png" />
+    <Content Include="Assets\weather\day\302.png" />
+    <Content Include="Assets\weather\day\305.png" />
+    <Content Include="Assets\weather\day\308.png" />
+    <Content Include="Assets\weather\day\311.png" />
+    <Content Include="Assets\weather\day\314.png" />
+    <Content Include="Assets\weather\day\317.png" />
+    <Content Include="Assets\weather\day\320.png" />
+    <Content Include="Assets\weather\day\323.png" />
+    <Content Include="Assets\weather\day\326.png" />
+    <Content Include="Assets\weather\day\329.png" />
+    <Content Include="Assets\weather\day\332.png" />
+    <Content Include="Assets\weather\day\335.png" />
+    <Content Include="Assets\weather\day\338.png" />
+    <Content Include="Assets\weather\day\350.png" />
+    <Content Include="Assets\weather\day\353.png" />
+    <Content Include="Assets\weather\day\356.png" />
+    <Content Include="Assets\weather\day\359.png" />
+    <Content Include="Assets\weather\day\362.png" />
+    <Content Include="Assets\weather\day\365.png" />
+    <Content Include="Assets\weather\day\368.png" />
+    <Content Include="Assets\weather\day\371.png" />
+    <Content Include="Assets\weather\day\374.png" />
+    <Content Include="Assets\weather\day\377.png" />
+    <Content Include="Assets\weather\day\386.png" />
+    <Content Include="Assets\weather\day\389.png" />
+    <Content Include="Assets\weather\day\392.png" />
+    <Content Include="Assets\weather\day\395.png" />
+    <Content Include="Assets\weather\night\113.png" />
+    <Content Include="Assets\weather\night\116.png" />
+    <Content Include="Assets\weather\night\119.png" />
+    <Content Include="Assets\weather\night\122.png" />
+    <Content Include="Assets\weather\night\143.png" />
+    <Content Include="Assets\weather\night\176.png" />
+    <Content Include="Assets\weather\night\179.png" />
+    <Content Include="Assets\weather\night\182.png" />
+    <Content Include="Assets\weather\night\185.png" />
+    <Content Include="Assets\weather\night\200.png" />
+    <Content Include="Assets\weather\night\227.png" />
+    <Content Include="Assets\weather\night\230.png" />
+    <Content Include="Assets\weather\night\248.png" />
+    <Content Include="Assets\weather\night\260.png" />
+    <Content Include="Assets\weather\night\263.png" />
+    <Content Include="Assets\weather\night\266.png" />
+    <Content Include="Assets\weather\night\281.png" />
+    <Content Include="Assets\weather\night\284.png" />
+    <Content Include="Assets\weather\night\293.png" />
+    <Content Include="Assets\weather\night\296.png" />
+    <Content Include="Assets\weather\night\299.png" />
+    <Content Include="Assets\weather\night\302.png" />
+    <Content Include="Assets\weather\night\305.png" />
+    <Content Include="Assets\weather\night\308.png" />
+    <Content Include="Assets\weather\night\311.png" />
+    <Content Include="Assets\weather\night\314.png" />
+    <Content Include="Assets\weather\night\317.png" />
+    <Content Include="Assets\weather\night\320.png" />
+    <Content Include="Assets\weather\night\323.png" />
+    <Content Include="Assets\weather\night\326.png" />
+    <Content Include="Assets\weather\night\329.png" />
+    <Content Include="Assets\weather\night\332.png" />
+    <Content Include="Assets\weather\night\335.png" />
+    <Content Include="Assets\weather\night\338.png" />
+    <Content Include="Assets\weather\night\350.png" />
+    <Content Include="Assets\weather\night\353.png" />
+    <Content Include="Assets\weather\night\356.png" />
+    <Content Include="Assets\weather\night\359.png" />
+    <Content Include="Assets\weather\night\362.png" />
+    <Content Include="Assets\weather\night\365.png" />
+    <Content Include="Assets\weather\night\368.png" />
+    <Content Include="Assets\weather\night\371.png" />
+    <Content Include="Assets\weather\night\374.png" />
+    <Content Include="Assets\weather\night\377.png" />
+    <Content Include="Assets\weather\night\386.png" />
+    <Content Include="Assets\weather\night\389.png" />
+    <Content Include="Assets\weather\night\392.png" />
+    <Content Include="Assets\weather\night\395.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="pages\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="pages\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\WheatherPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.0.8</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Win2D.uwp">
+      <Version>1.21.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
